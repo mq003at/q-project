@@ -1,0 +1,78 @@
+$colors: (
+    main: #ffffff,
+    sub: #000000,
+    slayout: #2A9D8F,
+    mlayout: #264653,
+    pcolor: #E9C46A,
+    scolor: #F4A261,
+    special: #E76F51
+);
+
+body {
+    margin: 0;
+    padding: 0;
+
+    &::-webkit-scrollbar {
+        width: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: map-get($map: $colors, $key: main);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: map-get($map: $colors, $key: mlayout);
+    }
+}
+
+.App {
+    display: flex;
+}
+
+.header {
+    height: 100vh;
+    flex: 0 0 10vw;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+
+    background-color: map-get($map: $colors, $key: slayout) !important;
+    transition: flex 0.5s;
+
+    &:hover{
+        flex: 0 0 20vw;
+    }
+
+    &.appbar {
+        position: inherit !important;
+        height: 100%;
+        box-shadow: 0px 2px 4px -1px map-get($map: $colors, $key: mlayout), 0px 4px 5px 0px map-get($map: $colors, $key: mlayout), 0px 1px 10px 0px map-get($map: $colors, $key: mlayout);
+    }
+
+    & .container {
+        padding: 0;
+    }
+
+    & .toolbar {
+        padding: 0;
+    }
+
+    & .main-logo {
+        width: 100%;
+        padding: 15px;
+        background-color: map-get($map: $colors, $key: mlayout);
+    }
+}
+
+.content {
+    flex: 1;
+    transition: flex 0.5s;
+}
+
+.navBar:hover + .content {
+    flex: 3;
+}
+
+.header-btn {
+    color: map-get($map: $colors, $key: main) !important;
+}

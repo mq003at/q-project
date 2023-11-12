@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+body::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+body::-webkit-scrollbar-thumb {
+  background: #264653;
+}
+
+.App {
+  display: flex;
+}
+
+.header {
+  height: 100vh;
+  flex: 0 0 10vw;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: #2A9D8F !important;
+  transition: flex 0.5s;
+}
+.header:hover {
+  flex: 0 0 20vw;
+}
+.header.appbar {
+  position: inherit !important;
+  height: 100%;
+  box-shadow: 0px 2px 4px -1px #264653, 0px 4px 5px 0px #264653, 0px 1px 10px 0px #264653;
+}
+.header .container {
+  padding: 0;
+}
+.header .toolbar {
+  padding: 0;
+}
+.header .main-logo {
+  width: 100%;
+  padding: 15px;
+  background-color: #264653;
+}
+
+.content {
+  flex: 1;
+  transition: flex 0.5s;
+}
+
+.navBar:hover + .content {
+  flex: 3;
+}
+
+.header-btn {
+  color: #ffffff !important;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,3 +1,5 @@
+// Interface for normal types
+
 export interface Common {
     id: number,
     creationAt: Date,
