@@ -58,4 +58,8 @@ body::-webkit-scrollbar-thumb {
   color: #ffffff !important;
 }
 
+.img-avatar {
+  height: 400px;
+}
+
 /*# sourceMappingURL=index.css.map */

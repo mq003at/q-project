@@ -8,6 +8,9 @@ $colors: (
     special: #E76F51
 );
 
+$dheight: calc(100vh - 0.1px);
+$dwidth: calc(80vw - 0.1px);
+
 body {
     margin: 0;
     padding: 0;
@@ -75,4 +78,8 @@ body {
 
 .header-btn {
     color: map-get($map: $colors, $key: main) !important;
+}
+
+.img-avatar {
+    height: 400px;
 }
