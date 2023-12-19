@@ -6,6 +6,7 @@
   --pcolor: #E9C46A;
   --scolor: #F4A261;
   --special: #E76F51;
+  --greyish: #F7F7F7;
   --dheight: calc(100vh - 0.1px);
   --dwidth: calc(80vw - 0.1px);
 }
@@ -13,6 +14,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--greyish);
 }
 body::-webkit-scrollbar {
   width: 0.25rem;
@@ -60,31 +62,33 @@ body::-webkit-scrollbar-thumb {
 
 .frontpage.cover {
   height: 100vh;
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
 }
 
-.home.section {
+.section {
   width: 90%;
+  height: 100vh;
   gap: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 3rem;
 }
-.home.section .img-div {
+
+.home .img-div {
   box-shadow: 10px 0 rgba(42, 157, 143, 0.75);
   border-radius: 50%;
 }
-.home.section .img-avatar {
+.home .img-avatar {
   background-repeat: no-repeat;
   height: 325px;
   transition: transform 0.75s ease-in-out;
   border-radius: 50%;
   margin: 0.75rem;
 }
-.home.section .text-div {
+.home .text-div {
   display: flex;
   flex-direction: column;
   -webkit-box-flex: 0;
