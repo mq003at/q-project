@@ -1,12 +1,27 @@
-$colors: (
-    main: #ffffff,
-    sub: #000000,
-    slayout: #2A9D8F,
-    mlayout: #264653,
-    pcolor: #E9C46A,
-    scolor: #F4A261,
-    special: #E76F51
-);
+// $colors: (
+//     main: #ffffff,
+//     sub: #000000,
+//     slayout: #2A9D8F,
+//     mlayout: #264653,
+//     pcolor: #E9C46A,
+//     scolor: #F4A261,
+//     special: #E76F51
+// );
+
+:root {
+    // Color pallete
+    --main: #ffffff;
+    --sub: #000000;
+    --slayout: #2A9D8F;
+    --mlayout: #264653;
+    --pcolor: #E9C46A;
+    --scolor: #F4A261;
+    --special: #E76F51;
+
+    // Size
+    --dheight: calc(100vh - 0.1px);
+    --dwidth: calc(80vw - 0.1px);
+}
 
 $dheight: calc(100vh - 0.1px);
 $dwidth: calc(80vw - 0.1px);
@@ -20,11 +35,11 @@ body {
     }
 
     &::-webkit-scrollbar-track {
-        background: map-get($map: $colors, $key: main);
+        background: var(--main);
     }
 
     &::-webkit-scrollbar-thumb {
-        background: map-get($map: $colors, $key: mlayout);
+        background: var(--mlayout);
     }
 }
 
@@ -35,21 +50,22 @@ body {
 .header {
     height: 100vh;
     flex: 0 0 10vw;
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky;
+    /* Safari */
     position: sticky;
     top: 0;
 
-    background-color: map-get($map: $colors, $key: slayout) !important;
+    background-color: var(--slayout) !important;
     transition: flex 0.5s;
 
-    &:hover{
+    &:hover {
         flex: 0 0 20vw;
     }
 
     &.appbar {
         position: inherit !important;
         height: 100%;
-        box-shadow: 0px 2px 4px -1px map-get($map: $colors, $key: mlayout), 0px 4px 5px 0px map-get($map: $colors, $key: mlayout), 0px 1px 10px 0px map-get($map: $colors, $key: mlayout);
+        box-shadow: 0px 2px 4px -1px var(--mlayout), 0px 4px 5px 0px var(--mlayout), 0px 1px 10px 0px var(--mlayout);
     }
 
     & .container {
@@ -63,23 +79,204 @@ body {
     & .main-logo {
         width: 100%;
         padding: 15px;
-        background-color: map-get($map: $colors, $key: mlayout);
+        background-color: var(--mlayout);
     }
 }
+
+.frontpage.cover {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home.section {
+    width: 90%;
+    gap: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+
+    .img-div {
+        box-shadow: 10px 0 rgba(42, 157, 143, 0.75);
+        border-radius: 50%;
+    }
+
+    .img-avatar {
+        background-repeat: no-repeat;
+        height: 325px;
+        transition: transform 0.75s ease-in-out;
+
+        border-radius: 50%;
+        margin: 0.75rem;
+    }
+
+    .text-div {
+        display: flex;
+        flex-direction: column;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        padding: 0 5rem;
+        width: 100%;
+
+        font-family: 'Poppins', sans-serif;
+        text-align: left;
+    }
+}
+
+.say-hi {
+    padding: 1rem 0;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.my-name {
+    padding-bottom: 1rem;
+
+    font-size: 3rem;
+    font-weight: bolder;
+    color: var(--special);
+}
+
+.passionate {
+    display: inline-flex;
+    padding-bottom: 1rem;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--sub);
+
+    .adjective {
+        padding-left: 0.5rem;
+        color: var(--special);
+        white-space: nowrap;
+
+        &.false {
+            animation: show 1s steps(40, end);
+        }
+
+        &.true {
+            animation: hide 1s steps(40, end);
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.title {
+    padding-bottom: 1rem;
+
+    letter-spacing: 0.15rem;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--special);
+
+}
+
+.who {
+    display: inline-flex;
+    padding-bottom: 1rem;
+
+    letter-spacing: 0.1cap;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    .on {
+        width: fit-content;
+        min-width: fit-content;
+        padding-right: 0.5rem;
+    }
+
+    .text-wrapper {
+        position: relative;
+
+        width: 100%
+    }
+
+    .journey {
+        padding-left: 0.5rem;
+        color: var(--slayout);
+
+        transition: transform 0.6s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
 
 .content {
     flex: 1;
     transition: flex 0.5s;
 }
 
-.navBar:hover + .content {
+.navBar:hover+.content {
     flex: 3;
 }
 
 .header-btn {
-    color: map-get($map: $colors, $key: main) !important;
+    color: var(--main) !important;
 }
 
-.img-avatar {
-    height: 400px;
+// Animation section
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes hidden {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+// @keyframes typing-2 {
+//     10%, 40% {
+//         width: 100%;
+//     }
+// }
+
+@for $i from 1 through 4 {
+    $startPercentage: (
+        $i - 1) * 25;
+    $midPercentage: $startPercentage + 12.5%;
+    $endPercentage: $i * 25;
+
+    @keyframes textFade#{$i} {
+
+        #{$startPercentage}%,
+        #{$endPercentage}% {
+            opacity: 0;
+        }
+
+        #{$midPercentage} {
+            opacity: 1;
+        }
+    }
+
+    .journey-#{$i} {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        animation: textFade#{$i} 30s ease-in-out infinite;
+    }
 }
