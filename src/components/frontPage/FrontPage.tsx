@@ -14,8 +14,8 @@ const FrontPage: React.FC = () => {
         <Box className="frontpage cover">
             <Home />
             <About />
-            <Projects />
             <Skills />
+            <Projects />
             <ContactMe />
         </Box>
     );

@@ -1,12 +1,12 @@
 :root {
   --main: #ffffff;
   --sub: #000000;
-  --slayout: #2A9D8F;
+  --slayout: #2a9d8f;
   --mlayout: #264653;
-  --pcolor: #E9C46A;
-  --scolor: #F4A261;
-  --special: #E76F51;
-  --greyish: #F7F7F7;
+  --pcolor: #e9c46a;
+  --scolor: #f4a261;
+  --special: #e76f51;
+  --greyish: #f7f7f7;
   --dheight: calc(100vh - 0.1px);
   --dwidth: calc(80vw - 0.1px);
 }
@@ -14,7 +14,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--greyish);
+  background-color: var(--greyish) !important;
 }
 body::-webkit-scrollbar {
   width: 0.25rem;
@@ -32,20 +32,22 @@ body::-webkit-scrollbar-thumb {
 
 .header {
   height: 100vh;
-  flex: 0 0 10vw;
+  flex: 0 0 100px;
   position: -webkit-sticky;
-  /* Safari */
   position: sticky;
   top: 0;
+  z-index: 100;
   background-color: var(--slayout) !important;
   transition: flex 0.5s;
 }
 .header:hover {
-  flex: 0 0 20vw;
+  flex: 0 0 200px;
 }
 .header.appbar {
   position: inherit !important;
   height: 100%;
+  max-width: 100%;
+  left: 0 !important;
   box-shadow: 0px 2px 4px -1px var(--mlayout), 0px 4px 5px 0px var(--mlayout), 0px 1px 10px 0px var(--mlayout);
 }
 .header .container {
@@ -61,20 +63,20 @@ body::-webkit-scrollbar-thumb {
 }
 
 .frontpage.cover {
-  height: 100vh;
   display: block;
   align-items: center;
   justify-content: center;
 }
 
 .section {
-  width: 90%;
+  width: 100%;
   height: 100vh;
   gap: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .home .img-div {
@@ -92,7 +94,6 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: column;
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 50%;
   padding: 0 5rem;
   width: 100%;
   font-family: "Poppins", sans-serif;
@@ -134,7 +135,7 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
-.title {
+.job-title {
   padding-bottom: 1rem;
   letter-spacing: 0.15rem;
   font-size: 2rem;
@@ -178,6 +179,101 @@ body::-webkit-scrollbar-thumb {
 
 .header-btn {
   color: var(--main) !important;
+}
+
+.title {
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  font-size: 1.5rem;
+  align-self: center;
+  padding-right: 2rem;
+  border-right: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to bottom, var(--main) 0%, var(--greyish) 10%, var(--sub) 50%, var(--greyish) 90%, var(--main) 100%);
+}
+
+.details {
+  width: 100%;
+  text-align: left;
+  align-self: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+}
+.details .sub-details {
+  position: relative;
+  color: var(--special);
+  padding-left: 0.5em;
+  padding-top: 1em;
+}
+.details .sub-details::before {
+  content: ".";
+  position: absolute;
+  bottom: 0.25em;
+  left: 0;
+}
+.details.skills {
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+.sub-title {
+  display: block;
+  position: relative;
+  width: 100%;
+  font-size: 10px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.sub-title.upper {
+  padding-left: 80px;
+}
+.sub-title.upper::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 50px;
+  height: 1px;
+  background: var(--sub);
+}
+.sub-title.lower {
+  padding-right: 80px;
+}
+.sub-title.lower::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: 0;
+  width: 50px;
+  height: 1px;
+  background: var(--sub);
+}
+
+.title-options {
+  padding: 2em 0;
+}
+.title-options.active {
+  text-decoration: underline;
+}
+
+.main-title {
+  width: 12rem;
+  white-space: nowrap;
+  color: var(--slayout);
+}
+.main-title:hover {
+  cursor: pointer;
+}
+.main-title.active {
+  text-decoration: underline;
+}
+
+.wrapper-box {
+  display: flex;
+  padding: 3.5rem;
+  border-radius: 50px;
+  background-color: var(--main);
 }
 
 @keyframes show {
