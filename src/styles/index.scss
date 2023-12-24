@@ -338,25 +338,58 @@ body {
 }
 
 .wrapper-box {
-  display: flex;
+  display: inline-flex;
   padding: 3.5rem;
+  width: 100%;
 
   border-radius: 50px;
   background-color: var(--main);
 }
 
-.skill-list {
+.skills-list {
+  display: grid;
+  -ms-grid-columns: (minmax(80px, 1fr)) [auto-fill];
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+
+  list-style-type: none;
+
   & li {
-    background-color: white;
     padding: 10px;
     border-radius: 15px;
-    width: 80px;
-    -webkit-transition: all 0.3s ease-in;
+    width: 100px;
+
     transition: all 0.3s ease-in;
-    -webkit-box-shadow: 0px 4px 8px rgba(134, 151, 168, 0.1);
-    box-shadow: 0px 4px 8px rgba(134, 151, 168, 0.1);
+    background-color: var(--main);
     border: 1px solid #eee;
   }
+}
+
+.skills-container {
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+
+  background-color: var(--main);
+  border-radius: 15px;
+  transition: all 0.3s ease-in;
+  border: 1px solid var(--main);
+
+  & img {
+    width: 100%;
+  }
+}
+
+.project.wrapper {
+  display: flex;
+  margin-top: 1.5em;
+  padding: 1.25em;
+
+  border-radius: 15px;
+  box-shadow: 0px 14px 28px rgba(134, 151, 168, 0.08);
+  transition: all 0.3s ease-in;
+  border: 1px solid #eee;
 }
 
 // Animation section

@@ -3,3 +3,13 @@ export interface HeaderBtnProps {
     section: string
     icon: JSX.Element
 }
+
+export type Item = {
+    name: string,
+    description: string
+    image: string
+}
+
+export interface CarouselProps {
+    item: Item
+}

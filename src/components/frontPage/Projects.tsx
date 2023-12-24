@@ -1,23 +1,35 @@
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
 const Project: React.FC = () => {
   return (
-    <Box className='project section'>
+    <Box className='projects section'>
       <Box className='projects wrapper-box'>
-        <Box className='project title'>
+        <Box className='projects title'>
           <Box className='sub-title upper'>MY PRECIOUS</Box>
-          <Box className='main-title'>PROJECTS</Box>
+          <Box className='title-options'>
+            <Box className='main-title'>PROJECTS</Box>
+          </Box>
           <Box className='sub-title lower'>MY PRECIOUS</Box>
         </Box>
-        <Box className='about-content'>
-          I'm a front-end web developer with a background in information technology at Centria University. My 4 years of IT
-          experience has given me a strong foundation for web development and building complex solutions. I am passionate about
-          coding and solving problems through code, and I am excited to work alongside other amazing programmers. With my
-          hardworking nature, I am confident that I could make a significant contribution to any organization I join!
-        </Box>
+        <Box className='projects details'>
+         <Box className='project wrapper'>
+            <Box className='project image'></Box>
+            <Box className='project more-details'>
+              <Typography variant='h3'>SPR-Kirrpis Management Portal</Typography>
+              <Typography variant='h4'>Technology:</Typography>
+              <ul>
+                <li><Typography variant='subtitle1'>ABC</Typography></li>
+                <li><Typography variant='subtitle2'>XYZ</Typography></li>
+              </ul>
+
+            </Box>
+         </Box>
+         </Box>
       </Box>
     </Box>
   )
 }
+
+
 
 export default Project
