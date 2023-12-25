@@ -5,7 +5,7 @@ const About: React.FC = () => {
   const [state, setState] = useState<number>(0)
 
   return (
-    <Box className='about section'>
+    <Box className='about section' id='about'>
       <Box className='about wrapper-box'>
         <Box className='about title'>
           <Box className='sub-title upper'>INFO ABOUT</Box>

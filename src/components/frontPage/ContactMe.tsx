@@ -4,7 +4,7 @@ import { Email, CalendarMonth } from '@mui/icons-material/';
 
 const ContactMe: React.FC = () => {
   return (
-    <Box className='contact-me section'>
+    <Box className='contact-me section' id='contact-me'>
       <Box className='contact-me wrapper-box'>
         <Box className='contact-me title'>
           <Box className='sub-title upper'>SAY HELLO WITH</Box>

@@ -20,7 +20,7 @@ const Skills: React.FC = () => {
   const [state, setState] = useState<number>(0)
 
   return (
-    <Box className='skills section'>
+    <Box className='skills section' id='skills'>
       <Box className='skills wrapper-box'>
         <Box className='skills title'>
           <Box className='sub-title upper'>ACQUIRED</Box>

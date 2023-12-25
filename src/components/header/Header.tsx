@@ -20,19 +20,19 @@ export const Header: React.FC = () => {
               <img src={logo} alt='placeholder-logo' style={{ maxWidth: '100%', maxHeight: '100%' }} />
             </Box>
             <Box className='header-buttons'>
-              <HeaderBtn section='home' icon={<HomeOutlinedIcon />}>
+              <HeaderBtn section='home' icon={<HomeOutlinedIcon />} offset={'0'}>
                 Home
               </HeaderBtn>
-              <HeaderBtn section='home' icon={<HomeOutlinedIcon />}>
+              <HeaderBtn section='about' icon={<HomeOutlinedIcon />} offset={'2em'}>
                 About Me
               </HeaderBtn>
-              <HeaderBtn section='home' icon={<HomeOutlinedIcon />}>
+              <HeaderBtn section='skills' icon={<HomeOutlinedIcon />} offset={'2em'}>
                 Skills
               </HeaderBtn>
-              <HeaderBtn section='home' icon={<HomeOutlinedIcon />}>
-                Project
+              <HeaderBtn section='projects' icon={<HomeOutlinedIcon />} offset={'15em'}>
+                Projects
               </HeaderBtn>
-              <HeaderBtn section='home' icon={<HomeOutlinedIcon />}>
+              <HeaderBtn section='contact-me' icon={<HomeOutlinedIcon />} offset={'2em'}>
                 Contact
               </HeaderBtn>
             </Box>

@@ -44,7 +44,7 @@ const Home: React.FC = () => {
   }
 
   return (
-    <Box className='home section'>
+    <Box className='home section' id='home'>
       <Box className='img-div'>
         <Box
           className='img-avatar'

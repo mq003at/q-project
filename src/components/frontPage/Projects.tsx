@@ -7,7 +7,7 @@ import BussinessCardWeb from '../../assets/bussiness-card.png'
 
 const Project: React.FC = () => {
   return (
-    <Box className='projects section'>
+    <Box className='projects section' id='projects'>
       <Box className='projects wrapper-box'>
         <Box className='projects title'>
           <Box className='sub-title upper'>MY PRECIOUS</Box>
