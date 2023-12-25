@@ -3,7 +3,10 @@ import Avatar from '../../assets/avatar-2500.jpg'
 import { useState } from 'react'
 
 import { LinkedIn, GitHub, Email } from '@mui/icons-material/'
+import { useNavigate } from 'react-router-dom'
 const Home: React.FC = () => {
+  const navigate = useNavigate();
+
   const randomAdj: string[] = ['PASSIONATE', 'ENTHUSIASTIC', 'DEVOTED', 'COMITTED', 'DEDICATED', 'DYNAMIC']
   const [chosenAdj, setChosenAdj] = useState<[string, number]>(['PASSIONATE', 0])
 
@@ -32,6 +35,12 @@ const Home: React.FC = () => {
       setChosenAdj([randomAdj[rI], rI])
       setToggle(false)
     }, 500)
+  }
+
+  const handleNavigation = (moveTo: string) => {
+    if (moveTo === 'github') window.open('https://github.com/mq003at/', '_blank')
+    else if (moveTo === 'linkedin')  window.open('https://www.linkedin.com/in/quannguyen1998/', '_blank')
+    else  window.open('mailto:quan.nguyen.suomea@gmail.com');
   }
 
   return (
@@ -67,11 +76,11 @@ const Home: React.FC = () => {
           </div>
         </Box>
         <Box className='direct-wrapper'>
-          <Button className='resume'>Resume</Button>
+          <Button className='styled-button'>Resume</Button>
           <Box className='other-direct'>
-            <LinkedIn className='icon' />
-            <GitHub className='icon' />
-            <Email className='icon' />
+            <LinkedIn className='icon' onClick={() => handleNavigation('linkedin')} />
+            <GitHub className='icon' onClick={() => handleNavigation('github')} />
+            <Email className='icon' onClick={() => handleNavigation('email')}/>
           </Box>
         </Box>
       </Box>

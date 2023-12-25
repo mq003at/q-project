@@ -1,4 +1,4 @@
-import { Box, TextareaAutosize } from '@mui/material'
+import { Box, Button, TextareaAutosize } from '@mui/material'
 import { useForm, ValidationError } from '@formspree/react'
 
 const ContactForm = () => {
@@ -18,10 +18,10 @@ const ContactForm = () => {
         <ValidationError prefix='Email' field='email' errors={state.errors} />
         <TextareaAutosize id='message' name='message' placeholder='Message' minRows={3} />
         <ValidationError prefix='Message' field='message' errors={state.errors} />
-        <ValidationError errors={state.errors} />
-        <button type='submit' disabled={state.submitting}>
-          Submit
-        </button>
+        <ValidationError errors={state.errors} className='error-text' />
+        <Button type='submit' disabled={state.submitting} className='styled-button'>
+          SEND
+        </Button>
       </form>
     </Box>
   )

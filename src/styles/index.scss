@@ -14,6 +14,7 @@
   --sub: #000000;
   --slayout: #2a9d8f;
   --slayout2: #f3f9f4;
+  --slayout3: #39b9aa;
   --mlayout: #264653;
   --pcolor: #e9c46a;
   --scolor: #f4a261;
@@ -22,6 +23,7 @@
   --scolor2: #ffd7b6;
   --special: #e76f51;
   --greyish: #f7f7f7;
+  --alert: #dc3545;
 
   // Size
   --dheight: calc(100vh - 0.1px);
@@ -77,18 +79,16 @@ body {
     box-shadow: 0px 2px 4px -1px var(--mlayout), 0px 4px 5px 0px var(--mlayout), 0px 1px 10px 0px var(--mlayout);
   }
 
-  & .container {
+  & .container, & .toolbar {
     padding: 0;
-  }
-
-  & .toolbar {
-    padding: 0;
+    height: 100%
   }
 
   & .main-logo {
     width: 100%;
     padding: 15px;
     background-color: var(--mlayout);
+    flex-grow: 0;
   }
 }
 
@@ -227,8 +227,45 @@ body {
   flex: 3;
 }
 
+.header-buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+  place-content: center;
+}
+
 .header-btn {
   color: var(--main) !important;
+  padding: 1em 0 !important;
+
+  &:hover {
+    background-color: var(--slayout3) !important;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+    padding: 1em 2em !important; 
+  }
+}
+
+.direct-wrapper {
+  display: flex;
+  text-wrap: nowrap;
+  align-items: center;
+  gap: 3rem;
+}
+
+.other-direct {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+
+  svg {
+    color: var(--sub);
+
+    &:hover {
+      font-size: 2.5em;
+      cursor: pointer;
+    }
+  }
 }
 
 .title {
@@ -249,6 +286,7 @@ body {
     var(--main) 100%
   );
 }
+
 
 .details {
   width: 100%;
@@ -474,6 +512,7 @@ body {
   flex: 0 0 50%;
 
   max-width: 50%;
+  min-width: 350px;
   box-shadow: 0px 4px 8px rgba(134, 151, 168, 0.1);
   border: 1px solid #eee;
   padding: 1.5em;
@@ -509,17 +548,59 @@ body {
 }
 
 // Form
+.form.intro {
+  padding: 0.75em 0;
+}
+
 .form.content {
   input {
-    padding: 11px 20px;
+    padding: 0.75em 1.5em;
+    margin: 1em 0;
+    width: 100%;
 
     border: 1px solid #eee;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
-    width: 100%;
     transition: all 0.3s ease-in;
   }
+
+  textarea {
+    padding: 0.75em 1.5em;
+    margin: 1em 0;
+    width: 100%;
+  }
+
+  .error-text {
+    padding: 0.75em 0;
+    color: var(--alert);
+  }
+}
+
+.styled-button {
+  padding: 0.75rem 0 !important;
+
+  background-color: var(--slayout) !important;
+  border-radius: 2.5rem !important;
+  width: 10rem;
+  color: var(--main) !important;
+  font-weight: 500 !important;
+  font-size: 0.875em !important;
+
+  &:hover {
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.footer {
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+
+  background-image: linear-gradient(90deg, var(--sub), var(--sub));
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: 75% 1.25px;
 }
 
 // Animation section
