@@ -23,16 +23,16 @@ export const Header: React.FC = () => {
               <HeaderBtn section='home' icon={<HomeOutlinedIcon />} offset={'0'}>
                 Home
               </HeaderBtn>
-              <HeaderBtn section='about' icon={<HomeOutlinedIcon />} offset={'2em'}>
+              <HeaderBtn section='about' icon={<HomeOutlinedIcon />} offset={'200'}>
                 About Me
               </HeaderBtn>
-              <HeaderBtn section='skills' icon={<HomeOutlinedIcon />} offset={'2em'}>
+              <HeaderBtn section='skills' icon={<HomeOutlinedIcon />} offset={'0'}>
                 Skills
               </HeaderBtn>
-              <HeaderBtn section='projects' icon={<HomeOutlinedIcon />} offset={'15em'}>
+              <HeaderBtn section='projects' icon={<HomeOutlinedIcon />} offset={'0'}>
                 Projects
               </HeaderBtn>
-              <HeaderBtn section='contact-me' icon={<HomeOutlinedIcon />} offset={'2em'}>
+              <HeaderBtn section='contact-me' icon={<HomeOutlinedIcon />} offset={'0'}>
                 Contact
               </HeaderBtn>
             </Box>

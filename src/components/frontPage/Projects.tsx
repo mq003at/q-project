@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Button, Link, Typography } from '@mui/material'
 
 import SprWeb from '../../assets/spr-web-1.png'
 import AcaciaWeb from '../../assets/acacia-web-2.png'
@@ -46,6 +46,11 @@ const Project: React.FC = () => {
                   </Typography>
                 </li>
               </ul>
+              <Box className='project navi'>
+                <Button href='https://github.com/mq003at/fs-13-only-frontend' style={{ width: '8rem' }} className='project-link'>
+                  Repo
+                </Button>
+              </Box>
             </Box>
           </Box>
           <Box className='project wrapper'>
@@ -82,6 +87,17 @@ const Project: React.FC = () => {
                   </Typography>
                 </li>
               </ul>
+              <Box className='project navi'>
+                <Button href='https://github.com/mq003at/spr-web' style={{ width: '7rem' }} className='project-link'>
+                  Repo
+                </Button>
+                <Button href='https://spr-kirppis-kok.web.app/' style={{ width: '7rem' }} className='project-link'>
+                  Live
+                </Button>
+                <Button href='https://github.com/mq003at/SPR-Checkin' style={{ width: '7rem' }} className='project-link'>
+                  App
+                </Button>
+              </Box>
             </Box>
           </Box>
           <Box className='project wrapper'>
@@ -106,6 +122,14 @@ const Project: React.FC = () => {
                   </Typography>
                 </li>
               </ul>
+              <Box className='project navi'>
+                <Button href='https://github.com/mq003at/business-info' style={{ width: '8rem' }} className='project-link'>
+                  Repo
+                </Button>
+                <Button href='https://business-info.netlify.app/' style={{ width: '8rem' }} className='project-link'>
+                  Live
+                </Button>
+              </Box>
             </Box>
           </Box>
           <Box className='project wrapper'>
@@ -119,15 +143,25 @@ const Project: React.FC = () => {
               </Typography>
               <ul>
                 <li>
-                  <Typography variant='subtitle2'>A replica site of Maido webpage to test my CSS skills, with animation and alignments.</Typography>
+                  <Typography variant='subtitle2'>
+                    A replica site of Maido webpage to test my CSS skills, with animation and alignments.
+                  </Typography>
                 </li>
                 <li>
-                  <Typography variant='subtitle2'>Ultilize public API to poppulate the site's content.</Typography>
+                  <Typography variant='subtitle2'>Ultilize SCSS and keyframe to write complex styling codes.</Typography>
                 </li>
                 <li>
-                  <Typography variant='subtitle2'>Hosted using Netlify and Firebase.</Typography>
+                  <Typography variant='subtitle2'>Hosted using Github.</Typography>
                 </li>
               </ul>
+              <Box className='project navi'>
+                <Button href='https://github.com/mq003at/fs13-CSS-SASS/' style={{ width: '8rem' }} className='project-link'>
+                  Repo
+                </Button>
+                <Button href='https://mq003at.github.io/mq003at.github.io-css-sass/' style={{ width: '8rem' }} className='project-link'>
+                  Live
+                </Button>
+              </Box>
             </Box>
           </Box>
         </Box>

@@ -97,21 +97,18 @@ body::-webkit-scrollbar-thumb {
 .home .text-div {
   display: flex;
   flex-direction: column;
-  -webkit-box-flex: 0;
-  padding: 0 5rem;
+  padding-left: 5rem;
   width: 100%;
   font-family: "Poppins", sans-serif;
   text-align: left;
 }
 
 .say-hi {
-  padding: 1rem 0;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .my-name {
-  padding-bottom: 1rem;
   font-size: 3rem;
   font-weight: bolder;
   color: var(--special);
@@ -119,13 +116,12 @@ body::-webkit-scrollbar-thumb {
 
 .passionate {
   display: inline-flex;
-  padding-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--sub);
 }
 .passionate .adjective {
-  padding-left: 0.5rem;
+  padding: 0 0.5rem;
   color: var(--special);
   white-space: nowrap;
 }
@@ -164,8 +160,8 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 .who .journey {
-  padding-left: 0.5rem;
   color: var(--slayout);
+  text-wrap: nowrap;
   transition: transform 0.6s ease-in-out;
 }
 .who .journey:hover {
@@ -412,6 +408,21 @@ body::-webkit-scrollbar-thumb {
   gap: 3.5rem;
 }
 
+.project.navi {
+  letter-spacing: 0.04rem;
+  font-size: 1rem;
+  padding-right: 25px;
+}
+.project.navi a {
+  font-weight: bold;
+  color: var(--slayout) !important;
+}
+.project.navi a:hover::after {
+  content: "→";
+  color: var(-slayout) !important;
+  padding-left: 5px;
+}
+
 .contact-types {
   display: flex;
   text-align: center;
@@ -531,6 +542,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   width: 100%;
   animation: textFade1 30s ease-in-out infinite;
+  white-space: nowrap;
 }
 
 @keyframes textFade2 {
@@ -548,6 +560,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   width: 100%;
   animation: textFade2 30s ease-in-out infinite;
+  white-space: nowrap;
 }
 
 @keyframes textFade3 {
@@ -565,6 +578,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   width: 100%;
   animation: textFade3 30s ease-in-out infinite;
+  white-space: nowrap;
 }
 
 @keyframes textFade4 {
@@ -582,6 +596,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   width: 100%;
   animation: textFade4 30s ease-in-out infinite;
+  white-space: nowrap;
 }
 
 /*# sourceMappingURL=index.css.map */

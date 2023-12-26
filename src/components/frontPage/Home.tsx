@@ -62,10 +62,10 @@ const Home: React.FC = () => {
         <Box className='passionate'>
           <span>YOUR</span>
           <Box className={`adjective ${toggle}`} onClick={() => replaceAdj()}>
-            {chosenAdj[0]}
+            {chosenAdj[0]} 
           </Box>
+          <span> FULLSTACK DEVELOPER</span>
         </Box>
-        <Box className='job-title'>FULLSTACK DEVELOPER</Box>
         <Box className='who'>
           <div className='on'>ON HIS </div>
           <div className='text-wrapper'>
