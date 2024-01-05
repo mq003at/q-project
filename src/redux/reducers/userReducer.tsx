@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Theme, UserReducer } from "../../types/reducers";
-import { darkColors, lightColors } from "../../styles/mui/theme";
+import { darkColors, lightColors } from "../../styles/styleComponents/theme";
 
 const userSlice = createSlice({
     name: 'userSlice',

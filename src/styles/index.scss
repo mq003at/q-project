@@ -223,9 +223,12 @@ body {
 }
 
 .header-toggler {
-  display: block;
-  position: fixed;
-  z-index: 1;
+  display: block !important;
+  position: fixed !important;
+  z-index: 1 !important;
+
+  padding: 1.25rem;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
 }
 
 .header-buttons {
@@ -244,6 +247,14 @@ body {
     background-color: var(--slayout3) !important;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
     padding: 1em 2em !important;
+  }
+}
+
+.header-hide.wrapper {
+  .hide-button {
+    color: var(--main) !important;
+    padding: 1em 0 !important;
+    line-height: 1.75;
   }
 }
 

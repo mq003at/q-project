@@ -2,19 +2,24 @@ import { AppBar, Box, Button, Container, Toolbar } from '@mui/material'
 import logo from '../../assets/Q-logo-letter-green.png'
 import HeaderBtn from './HeaderBtn'
 
-import { HomeMiniOutlined, HomeOutlined, Menu } from '@mui/icons-material/'
-import { Fragment } from 'react'
+import { KeyboardReturn, HomeOutlined, Menu } from '@mui/icons-material/'
+import { Fragment, useState } from 'react'
+import { useAppSelector } from '../../hooks/reduxHook'
 
 export const Header: React.FC = () => {
+  const theme = useAppSelector(store =>  store.userReducer.currentTheme);
+
+  const [isHide, setIsHide] = useState<boolean>(false);
+
   return (
     <Fragment>
       {/* Toggle for the header */}
-      <Button variant="contained" className='header-toggler'>
+      <Button variant="contained" className={`header-toggler`} onClick={() => setIsHide(false)}>
         <Menu />
       </Button>
 
       {/* Main header content */}
-      <Box className='header wrapper'>
+      <Box className={`header wrapper ${isHide}`}>
         <AppBar className='header appbar' position='fixed'>
           <Container className='container'>
             <Toolbar
@@ -44,6 +49,12 @@ export const Header: React.FC = () => {
                   Contact
                 </HeaderBtn>
               </Box>
+              <Box className='header-hide wrapper'>
+                <Button className={`header-hide hide-button ${theme}`} onClick={() => setIsHide(true)}>
+                  <KeyboardReturn />
+                </Button>
+              </Box>
+
             </Toolbar>
           </Container>
         </AppBar>
@@ -51,3 +62,5 @@ export const Header: React.FC = () => {
     </Fragment>
   )
 }
+
+
