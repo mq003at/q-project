@@ -218,6 +218,10 @@ body {
   transition: flex 0.5s;
 }
 
+.drawer {
+  height: 100vh;
+}
+
 .navBar:hover + .content {
   flex: 3;
 }
@@ -226,9 +230,12 @@ body {
   display: block !important;
   position: fixed !important;
   z-index: 1 !important;
-
-  padding: 1.25rem;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+  top: 50vh;
+  left: 0.5em;
+  
+  min-width: 1rem;
+  padding: 1rem !important;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2) !important;
 }
 
 .header-buttons {

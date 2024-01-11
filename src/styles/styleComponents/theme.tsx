@@ -1,5 +1,7 @@
+import { ColorPalettes } from "../../types/reducers"
+
 // styles.ts
-export const lightColors = {
+export const lightColors: ColorPalettes  = {
   main: '#ffffff',
   sub: '#000000',
   slayout: '#2a9d8f',

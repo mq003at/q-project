@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Container, Toolbar } from '@mui/material'
+import { AppBar, Box, Button, Container, Drawer, Toolbar } from '@mui/material'
 import logo from '../../assets/Q-logo-letter-green.png'
 import HeaderBtn from './HeaderBtn'
 
@@ -7,19 +7,14 @@ import { Fragment, useState } from 'react'
 import { useAppSelector } from '../../hooks/reduxHook'
 
 export const Header: React.FC = () => {
-  const theme = useAppSelector(store =>  store.userReducer.currentTheme);
+  const [isHide, setIsHide] = useState<boolean>(false)
 
-  const [isHide, setIsHide] = useState<boolean>(false);
+  const colors = useAppSelector((store) => store.userReducer.colors)
+  console.log('colors', colors)
 
-  return (
-    <Fragment>
-      {/* Toggle for the header */}
-      <Button variant="contained" className={`header-toggler`} onClick={() => setIsHide(false)}>
-        <Menu />
-      </Button>
-
-      {/* Main header content */}
-      <Box className={`header wrapper ${isHide}`}>
+  const HeaderBar: React.FC = () => {
+    return (
+      <Box className={`header wrapper`}>
         <AppBar className='header appbar' position='fixed'>
           <Container className='container'>
             <Toolbar
@@ -50,17 +45,28 @@ export const Header: React.FC = () => {
                 </HeaderBtn>
               </Box>
               <Box className='header-hide wrapper'>
-                <Button className={`header-hide hide-button ${theme}`} onClick={() => setIsHide(true)}>
+                <Button className={`header-hide hide-button`} onClick={() => setIsHide(true)} sx = {{ color: colors.main }}>
                   <KeyboardReturn />
                 </Button>
               </Box>
-
             </Toolbar>
           </Container>
         </AppBar>
       </Box>
+    )
+  }
+
+  return (
+    <Fragment>
+      {/* Toggle for the header */}
+      <Button variant='contained' className={`header-toggler`} onClick={() => setIsHide(false)} sx= {{ color: colors.slayout }}>
+        <Menu />
+      </Button>
+
+      {/* Main header content */}
+      <Drawer  className='drawer' anchor='left' open={!isHide} onClose={() => setIsHide(true)} sx ={{ height: '100vh' }}>
+        <HeaderBar />
+      </Drawer>
     </Fragment>
   )
 }
-
-
