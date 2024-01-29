@@ -7,7 +7,7 @@ import { Fragment, useState } from 'react'
 import { useAppSelector } from '../../hooks/reduxHook'
 
 export const Header: React.FC = () => {
-  const [isHide, setIsHide] = useState<boolean>(false)
+  const [isHide, setIsHide] = useState<boolean>(true)
 
   const colors = useAppSelector((store) => store.userReducer.colors)
   console.log('colors', colors)

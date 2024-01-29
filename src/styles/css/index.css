@@ -183,8 +183,9 @@ body::-webkit-scrollbar-thumb {
   z-index: 1 !important;
   top: 50vh;
   left: 0.5em;
-  min-width: 1rem;
-  padding: 1rem !important;
+  min-width: 40px !important;
+  padding: 5px !important;
+  margin: 0px !important;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2) !important;
 }
 
@@ -233,13 +234,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 .title {
+  display: block;
   font-weight: bold;
   letter-spacing: 0.05rem;
   font-size: 1.5rem;
   align-self: center;
+  text-align: center;
   padding-right: 2rem;
+  padding-left: 2rem;
   border-right: 2px solid;
-  border-image-slice: 1;
+  border-left: 2px solid;
+  border-image-slice: 2;
   border-image-source: linear-gradient(to bottom, var(--main) 0%, var(--greyish) 10%, var(--sub) 50%, var(--greyish) 90%, var(--main) 100%);
 }
 
@@ -278,6 +283,7 @@ body::-webkit-scrollbar-thumb {
 }
 .sub-title.upper {
   padding-left: 80px;
+  text-align: left;
 }
 .sub-title.upper::before {
   content: "";
@@ -290,6 +296,7 @@ body::-webkit-scrollbar-thumb {
 }
 .sub-title.lower {
   padding-right: 80px;
+  text-align: right;
 }
 .sub-title.lower::before {
   content: "";
@@ -321,7 +328,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .wrapper-box {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
   padding: 3.5rem;
   width: 100%;
   border-radius: 50px;
@@ -522,6 +531,7 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 1.5rem;
   margin-top: 3rem;
   padding-top: 2rem;
+  text-align: center;
   background-image: linear-gradient(90deg, var(--sub), var(--sub));
   background-position: 50% 0%;
   background-repeat: no-repeat;
