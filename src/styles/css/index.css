@@ -39,16 +39,12 @@ body::-webkit-scrollbar-thumb {
 
 .header {
   height: 100vh;
-  flex: 0 0 100px;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
   background-color: var(--slayout) !important;
   transition: flex 0.5s;
-}
-.header:hover {
-  flex: 0 0 200px;
 }
 .header.appbar {
   position: inherit !important;
@@ -173,6 +169,10 @@ body::-webkit-scrollbar-thumb {
   transition: flex 0.5s;
 }
 
+.drawer {
+  height: 100vh;
+}
+
 .navBar:hover + .content {
   flex: 3;
 }
@@ -181,8 +181,11 @@ body::-webkit-scrollbar-thumb {
   display: block !important;
   position: fixed !important;
   z-index: 1 !important;
-  padding: 1.25rem;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+  top: 50vh;
+  left: 0.5em;
+  min-width: 1rem;
+  padding: 1rem !important;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2) !important;
 }
 
 .header-buttons {

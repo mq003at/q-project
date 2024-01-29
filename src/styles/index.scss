@@ -58,7 +58,6 @@ body {
 
 .header {
   height: 100vh;
-  flex: 0 0 100px;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -66,10 +65,6 @@ body {
 
   background-color: var(--slayout) !important;
   transition: flex 0.5s;
-
-  &:hover {
-    flex: 0 0 200px;
-  }
 
   &.appbar {
     position: inherit !important;

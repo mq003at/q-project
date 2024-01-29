@@ -59,7 +59,7 @@ export const Header: React.FC = () => {
   return (
     <Fragment>
       {/* Toggle for the header */}
-      <Button variant='contained' className={`header-toggler`} onClick={() => setIsHide(false)} sx= {{ color: colors.slayout }}>
+      <Button variant='contained' className={`header-toggler `} onClick={() => setIsHide(false)} sx= {{ color: colors.slayout }}>
         <Menu />
       </Button>
 
