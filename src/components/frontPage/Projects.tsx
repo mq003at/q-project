@@ -4,17 +4,22 @@ import SprWeb from '../../assets/spr-web-1.png'
 import AcaciaWeb from '../../assets/acacia-web-2.png'
 import MaidoWeb from '../../assets/maido-web-1.png'
 import BussinessCardWeb from '../../assets/bussiness-card.png'
+import { useAppSelector } from '../../hooks/reduxHook'
 
 const Project: React.FC = () => {
+  const colors = useAppSelector((store) => store.userReducer.colors)
+  const currentTheme = useAppSelector((store) => store.userReducer.currentTheme)
   return (
     <Box className='projects section' id='projects'>
-      <Box className='projects wrapper-box'>
-        <Box className='projects title'>
-          <Box className='sub-title upper'>MY PRECIOUS</Box>
+      <Box className='projects wrapper-box' sx={{ backgroundColor: colors.slayout2, color: colors.main }}>
+        <Box className={`projects title ${currentTheme}`}>
+          <Box className={`sub-title upper ${currentTheme}`}>MY PRECIOUS</Box>
           <Box className='title-options'>
-            <Box className='main-title'>PROJECTS</Box>
+            <Box className='main-title' sx={{ color: colors.slayout3 }}>
+              PROJECTS
+            </Box>
           </Box>
-          <Box className='sub-title lower'>MY PRECIOUS</Box>
+          <Box className={`sub-title lower ${currentTheme}`}>MY PRECIOUS</Box>
         </Box>
         <Box className='projects details'>
           <Box className='project wrapper'>
@@ -22,11 +27,31 @@ const Project: React.FC = () => {
               <img src={AcaciaWeb} alt='Acacia Online Shopping'></img>
             </Box>
             <Box className='project more-details'>
-              <Typography variant='h3'>Online Shopping With Acacia</Typography>
-              <Typography variant='h4'>
-                Technology: <span className='tech-special'>React</span>, <span className='tech-special'>Typescript</span>,{' '}
-                <span className='tech-special'>ASP.Net</span>, <span className='tech-special'>Azure</span>,{' '}
-                <span className='tech-special'>MongoDB</span>
+              <Typography variant='h3' sx={{ color: colors.special }}>
+                Online Shopping With Acacia
+              </Typography>
+              <Typography variant='h4' sx={{ color: colors.main }}>
+                Technology:{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  React
+                </Box>
+                ,{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  {' '}
+                  Typescript
+                </Box>
+                ,{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  ASP.Net
+                </Box>
+                ,{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  Azure
+                </Box>
+                ,{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  MongoDB
+                </Box>
               </Typography>
               <ul>
                 <li>
@@ -46,8 +71,12 @@ const Project: React.FC = () => {
                   </Typography>
                 </li>
               </ul>
-              <Box className='project navi'>
-                <Button href='https://github.com/mq003at/fs-13-only-frontend' style={{ width: '8rem' }} className='project-link'>
+              <Box className={`project navi ${currentTheme}`}>
+                <Button
+                  href='https://github.com/mq003at/fs-13-only-frontend'
+                  style={{ width: '8rem', color: colors.slayout3 }}
+                  className='project-link'
+                >
                   Repo
                 </Button>
               </Box>
@@ -58,11 +87,31 @@ const Project: React.FC = () => {
               <img src={SprWeb} alt='SPR Portal'></img>
             </Box>
             <Box className='project more-details'>
-              <Typography variant='h3'>SPR-Kirpis Portal</Typography>
-              <Typography variant='h4'>
-                Technology: <span className='tech-special'>React</span>, <span className='tech-special'>Firebase</span>,{' '}
-                <span className='tech-special'>Express</span>, <span className='tech-special'>AWS Beanstalk</span>,{' '}
-                <span className='tech-special'>Java</span>
+              <Typography variant='h3' sx={{ color: colors.special }}>
+                SPR-Kirpis Portal
+              </Typography>
+              <Typography variant='h4' sx={{ color: colors.main }}>
+                Technology:{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  React
+                </Box>
+                ,{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  {' '}
+                  Firebase
+                </Box>
+                ,{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  Express
+                </Box>
+                ,{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  AWS Beanstalk
+                </Box>
+                ,{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  Java
+                </Box>
               </Typography>
               <ul>
                 <li>
@@ -87,14 +136,26 @@ const Project: React.FC = () => {
                   </Typography>
                 </li>
               </ul>
-              <Box className='project navi'>
-                <Button href='https://github.com/mq003at/spr-web' style={{ width: '7rem' }} className='project-link'>
+              <Box className={`project navi ${currentTheme}`}>
+                <Button
+                  href='https://github.com/mq003at/spr-web'
+                  style={{ width: '7rem', color: colors.slayout3 }}
+                  className='project-link'
+                >
                   Repo
                 </Button>
-                <Button href='https://spr-kirppis-kok.web.app/' style={{ width: '7rem' }} className='project-link'>
+                <Button
+                  href='https://spr-kirppis-kok.web.app/'
+                  style={{ width: '7rem', color: colors.slayout3 }}
+                  className='project-link'
+                >
                   Live
                 </Button>
-                <Button href='https://github.com/mq003at/SPR-Checkin' style={{ width: '7rem' }} className='project-link'>
+                <Button
+                  href='https://github.com/mq003at/SPR-Checkin'
+                  style={{ width: '7rem', color: colors.slayout3 }}
+                  className='project-link'
+                >
                   App
                 </Button>
               </Box>
@@ -105,10 +166,23 @@ const Project: React.FC = () => {
               <img src={BussinessCardWeb} alt='SPR Portal'></img>
             </Box>
             <Box className='project more-details'>
-              <Typography variant='h3'>Bussiness Card</Typography>
-              <Typography variant='h4'>
-                Technology: <span className='tech-special'>React</span>, <span className='tech-special'>Bootstrap</span>,{' '}
-                <span className='tech-special'>Netlify</span>
+              <Typography variant='h3' sx={{ color: colors.special }}>
+                Bussiness Card
+              </Typography>
+              <Typography variant='h4' sx={{ color: colors.main }}>
+                Technology:{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  React
+                </Box>
+                ,{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  {' '}
+                  Bootstrap
+                </Box>
+                ,{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  Netlify
+                </Box>
               </Typography>
               <ul>
                 <li>
@@ -122,11 +196,11 @@ const Project: React.FC = () => {
                   </Typography>
                 </li>
               </ul>
-              <Box className='project navi'>
-                <Button href='https://github.com/mq003at/business-info' style={{ width: '8rem' }} className='project-link'>
+              <Box className={`project navi ${currentTheme}`}>
+                <Button href='https://github.com/mq003at/business-info'  style={{ width: '8rem', color: colors.slayout3 }} className='project-link'>
                   Repo
                 </Button>
-                <Button href='https://business-info.netlify.app/' style={{ width: '8rem' }} className='project-link'>
+                <Button href='https://business-info.netlify.app/'  style={{ width: '8rem', color: colors.slayout3 }} className='project-link'>
                   Live
                 </Button>
               </Box>
@@ -137,11 +211,22 @@ const Project: React.FC = () => {
               <img src={MaidoWeb} alt='Maido Blog Page'></img>
             </Box>
             <Box className='project more-details'>
-              <Typography variant='h3'>Maido Blog</Typography>
-              <Typography variant='h4'>
-                Technology: <span className='tech-special'>Jquery</span>, <span className='tech-special'>Netlify</span>,{' '}
+              <Typography variant='h3' sx={{ color: colors.special }}>
+                Maido Blog
               </Typography>
-              <ul>
+              <Typography variant='h4' sx={{ color: colors.main }}>
+                Technology:{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  Jquery
+                </Box>
+                ,{' '}
+                <Box className='tech-special' sx={{ color: colors.slayout3 }}>
+                  {' '}
+                  Netlify
+                </Box>
+                ,{' '}
+              </Typography>
+              <ul className={`list ${currentTheme}`}>
                 <li>
                   <Typography variant='subtitle2'>
                     A replica site of Maido webpage to test my CSS skills, with animation and alignments.
@@ -154,11 +239,14 @@ const Project: React.FC = () => {
                   <Typography variant='subtitle2'>Hosted using Github.</Typography>
                 </li>
               </ul>
-              <Box className='project navi'>
-                <Button href='https://github.com/mq003at/fs13-CSS-SASS/' style={{ width: '8rem' }} className='project-link'>
+              <Box className={`project navi ${currentTheme}`}>
+                <Button href='https://github.com/mq003at/fs13-CSS-SASS/'  style={{ width: '8rem', color: colors.slayout3 }} className='project-link'>
                   Repo
                 </Button>
-                <Button href='https://mq003at.github.io/mq003at.github.io-css-sass/' style={{ width: '8rem' }} className='project-link'>
+                <Button
+                  href='https://mq003at.github.io/mq003at.github.io-css-sass/'
+                  style={{ width: '8rem', color: colors.slayout3 }}                  className='project-link'
+                >
                   Live
                 </Button>
               </Box>

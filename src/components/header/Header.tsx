@@ -2,15 +2,22 @@ import { AppBar, Box, Button, Container, Drawer, Toolbar } from '@mui/material'
 import logo from '../../assets/Q-logo-letter-green.png'
 import HeaderBtn from './HeaderBtn'
 
-import { KeyboardReturn, HomeOutlined, Menu } from '@mui/icons-material/'
+import { KeyboardReturn, HomeOutlined, Menu, KeyboardTab } from '@mui/icons-material/'
 import { Fragment, useState } from 'react'
-import { useAppSelector } from '../../hooks/reduxHook'
+import { useAppDispatch, useAppSelector } from '../../hooks/reduxHook'
+import { changeTheme } from '../../redux/reducers/userReducer'
 
 export const Header: React.FC = () => {
   const [isHide, setIsHide] = useState<boolean>(true)
 
-  const colors = useAppSelector((store) => store.userReducer.colors)
-  console.log('colors', colors)
+  const colors = useAppSelector((store) => store.userReducer.colors);
+  const currentTheme = useAppSelector((store) => store.userReducer.currentTheme);
+  const dispatch = useAppDispatch();
+
+  const switchTheme = () => {
+    if (currentTheme === 'light') dispatch(changeTheme('dark'));
+    else dispatch(changeTheme('light'));
+  }
 
   const HeaderBar: React.FC = () => {
     return (
@@ -43,6 +50,9 @@ export const Header: React.FC = () => {
                 <HeaderBtn section='contact-me' icon={<HomeOutlined />} offset={'0'}>
                   Contact
                 </HeaderBtn>
+                <Button onClick={() => switchTheme()}>
+                  Switch Theme
+                </Button>
               </Box>
               <Box className='header-hide wrapper'>
                 <Button className={`header-hide hide-button`} onClick={() => setIsHide(true)} sx = {{ color: colors.main }}>
@@ -59,8 +69,8 @@ export const Header: React.FC = () => {
   return (
     <Fragment>
       {/* Toggle for the header */}
-      <Button variant='contained' className={`header-toggler `} onClick={() => setIsHide(false)} sx= {{ color: colors.slayout }}>
-        <Menu />
+      <Button variant='contained' className={`header-toggler `} onClick={() => setIsHide(false)} sx= {{ color: colors.sub, backgroundColor: colors.slayout }}>
+        <KeyboardTab />
       </Button>
 
       {/* Main header content */}

@@ -5,6 +5,7 @@
   --slayout: #2a9d8f;
   --slayout2: #f3f9f4;
   --slayout3: #39b9aa;
+  --slayout4: #9dd9cf;
   --mlayout: #264653;
   --pcolor: #e9c46a;
   --scolor: #f4a261;
@@ -21,7 +22,6 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--greyish) !important;
 }
 body::-webkit-scrollbar {
   width: 0.25rem;
@@ -114,11 +114,9 @@ body::-webkit-scrollbar-thumb {
   display: inline-flex;
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--sub);
 }
 .passionate .adjective {
   padding: 0 0.5rem;
-  color: var(--special);
   white-space: nowrap;
 }
 .passionate .adjective.false {
@@ -153,6 +151,7 @@ body::-webkit-scrollbar-thumb {
 }
 .who .text-wrapper {
   position: relative;
+  height: 2rem;
   width: 100%;
 }
 .who .journey {
@@ -225,10 +224,7 @@ body::-webkit-scrollbar-thumb {
   gap: 2rem;
   align-items: center;
 }
-.other-direct svg {
-  color: var(--sub);
-}
-.other-direct svg:hover {
+.other-direct :hover {
   font-size: 2.5em;
   cursor: pointer;
 }
@@ -245,7 +241,12 @@ body::-webkit-scrollbar-thumb {
   border-right: 2px solid;
   border-left: 2px solid;
   border-image-slice: 2;
+}
+.title.light {
   border-image-source: linear-gradient(to bottom, var(--main) 0%, var(--greyish) 10%, var(--sub) 50%, var(--greyish) 90%, var(--main) 100%);
+}
+.title.dark {
+  border-image-source: linear-gradient(to bottom, #757978 0%, var(--greyish) 30%, white 50%, var(--greyish) 70%, #757978 100%);
 }
 
 .details {
@@ -285,7 +286,7 @@ body::-webkit-scrollbar-thumb {
   padding-left: 80px;
   text-align: left;
 }
-.sub-title.upper::before {
+.sub-title.upper.light::before {
   content: "";
   position: absolute;
   top: 7px;
@@ -294,18 +295,36 @@ body::-webkit-scrollbar-thumb {
   height: 1px;
   background: var(--sub);
 }
+.sub-title.upper.dark::before {
+  content: "";
+  position: absolute;
+  top: 7.5px;
+  left: 0;
+  width: 50px;
+  height: 1px;
+  background: var(--main);
+}
 .sub-title.lower {
   padding-right: 80px;
   text-align: right;
 }
-.sub-title.lower::before {
+.sub-title.lower.light::before {
   content: "";
   position: absolute;
-  top: 7px;
+  top: 7.5px;
   right: 0;
   width: 50px;
   height: 1px;
   background: var(--sub);
+}
+.sub-title.lower.dark::before {
+  content: "";
+  position: absolute;
+  top: 7.5px;
+  right: 0;
+  width: 50px;
+  height: 1px;
+  background: var(--main);
 }
 
 .title-options {
@@ -318,7 +337,6 @@ body::-webkit-scrollbar-thumb {
 .main-title {
   width: 12rem;
   white-space: nowrap;
-  color: var(--slayout);
 }
 .main-title:hover {
   cursor: pointer;
@@ -334,7 +352,6 @@ body::-webkit-scrollbar-thumb {
   padding: 3.5rem;
   width: 100%;
   border-radius: 50px;
-  background-color: var(--main);
 }
 
 .skills-list {
@@ -392,32 +409,32 @@ body::-webkit-scrollbar-thumb {
   list-style-type: none;
   padding: 0;
 }
-.project.wrapper li {
+.project.wrapper ul li {
   position: relative;
   padding-left: 2em;
 }
-.project.wrapper li::before {
+.project.wrapper ul li::before {
   content: "•";
   position: absolute;
   top: -0.2rem;
   left: 0.75rem;
-  color: var(--sub);
 }
 .project.wrapper h3 {
   font-size: 1.25em;
-  white-space: nowrap;
-  color: var(--special);
   font-weight: bold;
   letter-spacing: 0.05rem;
   padding-bottom: 0.75rem;
+  flex-wrap: wrap;
 }
 .project.wrapper h4 {
+  display: flex;
+  gap: 2px;
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.05rem;
   padding-bottom: 0.75rem;
-  color: var(--sub);
   line-height: 1.5rem;
+  flex-wrap: wrap;
 }
 .project.wrapper h4 span {
   color: var(--slayout);
@@ -426,6 +443,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 550;
   line-height: 1.5rem;
   padding-bottom: 0.075rem;
+  flex-wrap: wrap;
 }
 
 .projects.details {
@@ -441,11 +459,9 @@ body::-webkit-scrollbar-thumb {
 }
 .project.navi a {
   font-weight: bold;
-  color: var(--slayout) !important;
 }
 .project.navi a:hover::after {
   content: "→";
-  color: var(-slayout) !important;
   padding-left: 5px;
 }
 
@@ -473,14 +489,6 @@ body::-webkit-scrollbar-thumb {
   padding: 1em;
   margin-bottom: 1.5em;
   width: 65px;
-}
-.contact-type-wrapper .contact-icon-container.email {
-  background-color: var(--slayout2);
-  color: var(--slayout);
-}
-.contact-type-wrapper .contact-icon-container.calendly {
-  background-color: var(--calend2);
-  color: var(--calend);
 }
 .contact-type-wrapper a {
   padding-bottom: 1em;

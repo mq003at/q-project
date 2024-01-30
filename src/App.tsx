@@ -13,14 +13,14 @@ import { Header } from './components/header/Header'
 import { Box, ThemeProvider } from '@mui/material'
 
 function App() {
-  const theme = useAppSelector((store) => store.userReducer.currentTheme);
+  const colors = useAppSelector((store) => store.userReducer.colors);
 
   return (
     <div className='App'>
       <BrowserRouter>
           <ReactNotifications />
           <Header />
-          <Box className='content'>
+          <Box className='content' sx={{ backgroundColor: colors.greyish}}>
             <Routes>
               <Route path='/' element={<FrontPage />} />
               <Route path='/home' element={<FrontPage />} />

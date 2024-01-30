@@ -1,11 +1,11 @@
-import { Box, Button } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import Avatar from '../../assets/avatar-2500.jpg'
 import { useState } from 'react'
 
 import { LinkedIn, GitHub, Email } from '@mui/icons-material/'
-import { useNavigate } from 'react-router-dom'
+import { useAppSelector } from '../../hooks/reduxHook'
 const Home: React.FC = () => {
-  const navigate = useNavigate();
+  const colors = useAppSelector((store) => store.userReducer.colors)
 
   const randomAdj: string[] = ['PASSIONATE', 'ENTHUSIASTIC', 'DEVOTED', 'COMITTED', 'DEDICATED', 'DYNAMIC']
   const [chosenAdj, setChosenAdj] = useState<[string, number]>(['PASSIONATE', 0])
@@ -57,30 +57,28 @@ const Home: React.FC = () => {
         ></Box>
       </Box>
       <Box className='text-div'>
-        <Box className='say-hi'>HI THERE! MY NAME IS</Box>
-        <Box className='my-name'>QUAN NGUYEN</Box>
+        <Box className='say-hi' sx={{ color: colors.main }}>HI THERE! MY NAME IS</Box>
+        <Box className='my-name' sx={{ color: colors.special }}>QUAN NGUYEN</Box>
         <Box className='passionate'>
-          <span>YOUR</span>
-          <Box className={`adjective ${toggle}`} onClick={() => replaceAdj()}>
+          <Box sx={{ color: colors.main }}>YOUR</Box>
+          <Box className={`adjective ${toggle}`} onClick={() => replaceAdj()} sx={{ color: colors.special }}>
             {chosenAdj[0]} 
           </Box>
-          <span> FULLSTACK DEVELOPER</span>
         </Box>
         <Box className='who'>
-          <div className='on'>ON HIS </div>
-          <div className='text-wrapper'>
-            <span className='journey-1'>PATH TO BECOME A GREAT DEVELOPER</span>
-            <span className='journey-2'>JOURNEY IN THE WORLD OF TECHNOLOGY</span>
-            <span className='journey-3'>EXPLORATION OF THE MACHINE'S POTENTIAL</span>
-            <span className='journey-4'>ADVENTURE IN THE CODING REALM</span>
-          </div>
+          <Box className='text-wrapper'>
+            <Box className='journey-1' sx={{ color: colors.main }}>FULL-STACK DEVELOPER</Box>
+            <Box className='journey-2' sx={{ color: colors.main }}>REACT ENTHUSIAST</Box>
+            <Box className='journey-3' sx={{ color: colors.main }}>ASP.NET CODER</Box>
+            <Box className='journey-4' sx={{ color: colors.main }}>DEV-OPS DEPLOYER</Box>
+          </Box>
         </Box>
         <Box className='direct-wrapper'>
           <Button className='styled-button'>Resume</Button>
           <Box className='other-direct'>
-            <LinkedIn className='icon' onClick={() => handleNavigation('linkedin')} />
-            <GitHub className='icon' onClick={() => handleNavigation('github')} />
-            <Email className='icon' onClick={() => handleNavigation('email')}/>
+            <LinkedIn className='icon' onClick={() => handleNavigation('linkedin')}  sx={{ color: colors.main }} />
+            <GitHub className='icon' onClick={() => handleNavigation('github')}  sx={{ color: colors.main }} />
+            <Email className='icon' onClick={() => handleNavigation('email')}  sx={{ color: colors.main }} />
           </Box>
         </Box>
       </Box>

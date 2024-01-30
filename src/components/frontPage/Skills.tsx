@@ -15,24 +15,35 @@ import Sass from '../../assets/icon/sass.svg'
 import NodeJS from '../../assets/icon/nodejs-1-logo.svg'
 import ASPNet from '../../assets/icon/asp.svg'
 import Firebase from '../../assets/icon/firebase.svg'
+import { useAppSelector } from '../../hooks/reduxHook'
 
 const Skills: React.FC = () => {
+  const colors = useAppSelector((store) => store.userReducer.colors)
+  const currentTheme = useAppSelector((store) => store.userReducer.currentTheme)
   const [state, setState] = useState<number>(0)
 
   return (
     <Box className='skills section' id='skills'>
-      <Box className='skills wrapper-box'>
-        <Box className='skills title'>
-          <Box className='sub-title upper'>ACQUIRED</Box>
+      <Box className='skills wrapper-box' sx={{ backgroundColor: colors.slayout2, color: colors.main }}>
+        <Box className={`skills title ${currentTheme}`}>
+          <Box className={`sub-title upper ${currentTheme}`}>ACQUIRED</Box>
           <Box className='title-options'>
-            <Box className={`main-title ${state === 0 ? 'active' : ''}`} onClick={() => setState(0)}>
+            <Box
+              className={`main-title ${state === 0 ? 'active' : ''}`}
+              sx={{ color: colors.slayout3 }}
+              onClick={() => setState(0)}
+            >
               SKILLS
             </Box>
-            <Box className={`main-title ${state === 1 ? 'active' : ''}`} onClick={() => setState(1)}>
+            <Box
+              className={`main-title ${state === 1 ? 'active' : ''}`}
+              sx={{ color: colors.slayout3 }}
+              onClick={() => setState(1)}
+            >
               EDUCATION
             </Box>
           </Box>
-          <Box className='sub-title lower'>ACQUIRED</Box>
+          <Box className={`sub-title lower ${currentTheme}`}>ACQUIRED</Box>
         </Box>
         {state === 0 ? (
           <Box className='skills details'>
