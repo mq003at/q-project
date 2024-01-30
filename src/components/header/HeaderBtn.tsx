@@ -4,6 +4,7 @@ import { scroller } from 'react-scroll'
 
 const HeaderBtn: React.FC<HeaderBtnProps> = (props) => {
     const handleNav = () => {
+        props.closeDrawer();
         scroller.scrollTo(props.section, {
             duration: 800,
             delay: 0,

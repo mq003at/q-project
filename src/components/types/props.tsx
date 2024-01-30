@@ -1,4 +1,5 @@
 export interface HeaderBtnProps {
+  closeDrawer: () => void
   children: React.ReactNode
   section: string
   icon: JSX.Element

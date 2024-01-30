@@ -5,7 +5,7 @@ export const lightColors: ColorPalettes = {
   main: '#000000',
   sub: '#ffffff',
   slayout: '#2a9d8f',
-  slayout2: '#f3f9f4',
+  slayout2: '#ffffff',
   slayout3: '#4ba89b',
   mlayout: '#264653',
   pcolor: '#e9c46a',

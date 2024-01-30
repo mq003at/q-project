@@ -25,6 +25,12 @@ $dheight: calc(100vh - 0.1px);
 $dwidth: calc(80vw - 0.1px);
 
 body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+
+  position: relative;
   margin: 0;
   padding: 0;
 
@@ -43,6 +49,7 @@ body {
 
 .App {
   display: flex;
+  width: 100vw;
 }
 
 .header {
@@ -111,11 +118,18 @@ body {
   .text-div {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding-left: 5rem;
-    width: 100%;
+    width: fit-content;
 
     font-family: 'Poppins', sans-serif;
     text-align: left;
+
+    > * {
+      width: auto;
+      justify-content: center;
+      text-align: center !important;
+    }
   }
 }
 
@@ -210,10 +224,9 @@ body {
 
 .header-toggler {
   display: block !important;
-  position: fixed !important;
   z-index: 1 !important;
   top: 50vh;
-  left: 0.5em;
+  left: 1em;
 
   min-width: 40px !important;
   padding: 5px !important;
@@ -308,7 +321,6 @@ body {
   .sub-details {
     position: relative;
 
-    color: var(--special);
     padding-left: 0.5em;
     padding-top: 1em;
 
@@ -554,7 +566,6 @@ body {
   }
 }
 
-
 .contact-types {
   display: flex;
   text-align: center;
@@ -644,7 +655,6 @@ body {
   padding-top: 2rem;
 
   text-align: center;
-  background-image: linear-gradient(90deg, var(--sub), var(--sub));
   background-position: 50% 0%;
   background-repeat: no-repeat;
   background-size: 75% 1.25px;
@@ -671,12 +681,6 @@ body {
   }
 }
 
-// @keyframes typing-2 {
-//     10%, 40% {
-//         width: 100%;
-//     }
-// }
-
 @for $i from 1 through 4 {
   $startPercentage: ($i - 1) * 25;
   $midPercentage: $startPercentage + 12.5%;
@@ -701,5 +705,57 @@ body {
     width: 100%;
     animation: textFade#{$i} 30s ease-in-out infinite;
     white-space: nowrap;
+  }
+}
+
+/**********************/
+/*   MAX WIDTH 900PX  */
+/**********************/
+@media (max-width: 900px) {
+  .header-toggler {
+    top: 1em;
+  }
+
+  .header.appbar,
+  .drawer {
+    position: sticky;
+    padding-right: 0px !important;
+    overflow-y: hidden;
+  }
+  .header.appbar,
+  .drawer,
+  .content {
+    width: 100vw;
+  }
+
+  .section,
+  .direct-wrapper {
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 3.5em 1%;
+    justify-content: center;
+    > :not(.img-div) {
+      padding: 3rem 0 !important;
+    }
+  }
+
+  .home .img-avatar {
+    height: 300px;
+  }
+
+  .about.details {
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .home .img-avatar {
+    height: 275px;
+  }
+
+  .details {
+    padding: 0 5%;
   }
 }

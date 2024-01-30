@@ -35,22 +35,22 @@ export const Header: React.FC = () => {
                 <img src={logo} alt='placeholder-logo' style={{ maxWidth: '100%', maxHeight: '100%' }} />
               </Box>
               <Box className='header-buttons'>
-                <HeaderBtn section='home' icon={<HomeOutlined />} offset={'0'}>
+                <HeaderBtn section='home' icon={<HomeOutlined />} offset={'0'} closeDrawer={() => setIsHide(true)}>
                   Home
                 </HeaderBtn>
-                <HeaderBtn section='about' icon={<HomeOutlined />} offset={'200'}>
+                <HeaderBtn section='about' icon={<HomeOutlined />} offset={'200'} closeDrawer={() => setIsHide(true)}>
                   About Me
                 </HeaderBtn>
-                <HeaderBtn section='skills' icon={<HomeOutlined />} offset={'0'}>
+                <HeaderBtn section='skills' icon={<HomeOutlined />} offset={'0'} closeDrawer={() => setIsHide(true)}>
                   Skills
                 </HeaderBtn>
-                <HeaderBtn section='projects' icon={<HomeOutlined />} offset={'0'}>
+                <HeaderBtn section='projects' icon={<HomeOutlined />} offset={'0'} closeDrawer={() => setIsHide(true)}>
                   Projects
                 </HeaderBtn>
-                <HeaderBtn section='contact-me' icon={<HomeOutlined />} offset={'0'}>
+                <HeaderBtn section='contact-me' icon={<HomeOutlined />} offset={'0'} closeDrawer={() => setIsHide(true)}>
                   Contact
                 </HeaderBtn>
-                <Button onClick={() => switchTheme()}>
+                <Button className='header-btn' onClick={() => {switchTheme(); setIsHide(true)}}>
                   Switch Theme
                 </Button>
               </Box>
@@ -69,7 +69,7 @@ export const Header: React.FC = () => {
   return (
     <Fragment>
       {/* Toggle for the header */}
-      <Button variant='contained' className={`header-toggler `} onClick={() => setIsHide(false)} sx= {{ color: colors.sub, backgroundColor: colors.slayout }}>
+      <Button variant='contained' className={`header-toggler position-fixed`} onClick={() => setIsHide(false)} sx= {{ color: colors.sub, backgroundColor: colors.slayout }}>
         <KeyboardTab />
       </Button>
 
