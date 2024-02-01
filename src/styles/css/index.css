@@ -405,7 +405,6 @@ body::-webkit-scrollbar-thumb {
   border: 1px solid #eee;
 }
 .project.wrapper .image {
-  flex: 0 0 350px;
   width: 350px;
   border-radius: 15px;
   align-self: center;
@@ -485,7 +484,6 @@ body::-webkit-scrollbar-thumb {
 .contact-type-wrapper {
   display: flex;
   flex-flow: column wrap;
-  flex: 0 0 50%;
   max-width: 50%;
   min-width: 350px;
   box-shadow: 0px 4px 8px rgba(134, 151, 168, 0.1);
@@ -679,12 +677,39 @@ body::-webkit-scrollbar-thumb {
     padding-right: 2rem;
   }
 }
+/**********************/
+/*   MAX WIDTH 400PX  */
+/**********************/
 @media (max-width: 400px) {
   .home .img-avatar {
     height: 275px;
   }
   .details {
     padding: 0 5%;
+  }
+  .project.wrapper, .contact-me.details {
+    flex-direction: column;
+    padding: 2em 0;
+    gap: 1em;
+    text-align: center;
+  }
+  .project .more-details ul {
+    padding: 0 1em;
+    text-align: left;
+  }
+  .project .navi {
+    padding-right: 0;
+  }
+  .contact-types {
+    padding: 2em 0;
+    align-items: center;
+    flex-direction: column;
+  }
+  .sub-details::before {
+    content: "" !important;
+  }
+  .form.content input, .form.content textarea {
+    width: 90%;
   }
 }
 

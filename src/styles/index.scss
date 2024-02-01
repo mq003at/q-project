@@ -483,7 +483,6 @@ body {
   border: 1px solid #eee;
 
   .image {
-    flex: 0 0 350px;
     width: 350px;
 
     border-radius: 15px;
@@ -576,7 +575,6 @@ body {
 .contact-type-wrapper {
   display: flex;
   flex-flow: column wrap;
-  flex: 0 0 50%;
 
   max-width: 50%;
   min-width: 350px;
@@ -750,6 +748,10 @@ body {
   }
 }
 
+/**********************/
+/*   MAX WIDTH 400PX  */
+/**********************/
+
 @media (max-width: 400px) {
   .home .img-avatar {
     height: 275px;
@@ -757,5 +759,36 @@ body {
 
   .details {
     padding: 0 5%;
+  }
+
+  .project.wrapper, .contact-me.details {
+    flex-direction: column;
+    padding: 2em 0;
+    gap: 1em;
+    text-align: center;
+  }
+  .project {
+    .more-details ul {
+      padding: 0 1em;
+      text-align: left;
+    }
+
+    .navi {
+      padding-right: 0;
+    }
+  }
+
+  .contact-types {
+    padding: 2em 0; 
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .sub-details::before {
+    content: '' !important;
+  }
+
+  .form.content input, .form.content textarea {
+    width: 90%;
   }
 }
