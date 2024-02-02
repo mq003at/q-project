@@ -2,7 +2,7 @@ import { AppBar, Box, Button, Container, Drawer, Toolbar } from '@mui/material'
 import logo from '../../assets/Q-logo-letter-green.png'
 import HeaderBtn from './HeaderBtn'
 
-import { KeyboardReturn, HomeOutlined, Menu, KeyboardTab } from '@mui/icons-material/'
+import { KeyboardReturn, HomeOutlined, KeyboardTab } from '@mui/icons-material/'
 import { Fragment, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHook'
 import { changeTheme } from '../../redux/reducers/userReducer'

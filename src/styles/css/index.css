@@ -283,6 +283,10 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   font-size: 0.7rem;
 }
+.details ul {
+  padding-left: 0 !important;
+  padding-inline-start: 0px;
+}
 
 .sub-title {
   display: block;
@@ -653,11 +657,6 @@ body::-webkit-scrollbar-thumb {
     position: sticky;
     padding-right: 0px !important;
     overflow-y: hidden;
-  }
-  .header.appbar,
-  .drawer,
-  .content {
-    width: 100vw;
   }
   .section,
   .direct-wrapper {

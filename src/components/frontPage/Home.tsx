@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import Avatar from '../../assets/avatar-2500.jpg'
 import { useState } from 'react'
 

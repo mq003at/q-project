@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from './hooks/reduxHook'
+import { useAppSelector } from './hooks/reduxHook'
 import { ReactNotifications } from 'react-notifications-component'
 
 import FrontPage from './components/frontPage/FrontPage'
@@ -10,7 +10,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
 import { Header } from './components/header/Header'
-import { Box, ThemeProvider } from '@mui/material'
+import { Box } from '@mui/material'
 
 function App() {
   const colors = useAppSelector((store) => store.userReducer.colors);

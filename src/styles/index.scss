@@ -336,6 +336,11 @@ body {
     text-align: center;
     font-size: 0.7rem;
   }
+
+  ul {
+    padding-left: 0 !important;
+    padding-inline-start: 0px;
+  }
 }
 
 .sub-title {
@@ -720,11 +725,7 @@ body {
     padding-right: 0px !important;
     overflow-y: hidden;
   }
-  .header.appbar,
-  .drawer,
-  .content {
-    width: 100vw;
-  }
+
 
   .section,
   .direct-wrapper {

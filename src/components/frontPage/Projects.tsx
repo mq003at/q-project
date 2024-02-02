@@ -1,4 +1,4 @@
-import { Box, Button, Link, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 
 import SprWeb from '../../assets/spr-web-1.png'
 import AcaciaWeb from '../../assets/acacia-web-2.png'
