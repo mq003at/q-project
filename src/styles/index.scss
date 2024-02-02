@@ -744,24 +744,16 @@ body {
   }
 
   .about.details {
-    padding-right: 2rem;
-  }
-}
-
-/**********************/
-/*   MAX WIDTH 400PX  */
-/**********************/
-
-@media (max-width: 400px) {
-  .home .img-avatar {
-    height: 275px;
+    padding: 0 2rem;
   }
 
-  .details {
-    padding: 0 5%;
+  .skills.details {
+    max-width: 90%;
+    padding-left: 0;
   }
 
-  .project.wrapper, .contact-me.details {
+  .project.wrapper,
+  .contact-me.details {
     flex-direction: column;
     padding: 2em 0;
     gap: 1em;
@@ -776,10 +768,14 @@ body {
     .navi {
       padding-right: 0;
     }
+
+    &.wrapper h4 {
+      place-content: center;
+    }
   }
 
   .contact-types {
-    padding: 2em 0; 
+    padding: 2em 0;
     align-items: center;
     flex-direction: column;
   }
@@ -788,7 +784,22 @@ body {
     content: '' !important;
   }
 
-  .form.content input, .form.content textarea {
+  .form.content input,
+  .form.content textarea {
     width: 90%;
+  }
+}
+
+/**********************/
+/*   MAX WIDTH 400PX  */
+/**********************/
+
+@media (max-width: 400px) {
+  .home .img-avatar {
+    height: 275px;
+  }
+
+  .details {
+    padding: 0 5%;
   }
 }
